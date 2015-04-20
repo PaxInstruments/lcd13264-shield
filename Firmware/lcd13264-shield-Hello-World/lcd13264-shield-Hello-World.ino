@@ -52,12 +52,18 @@
 #define SW_D_pin             A2
 #define SW_E_pin             A1
 #define SW_F_pin             A0
+#define SD_CS                10
 
 #define LCD_CONTRAST     0x018*7  // Sets the LCD contrast
 
 #include "U8glib.h"
+#include <SdFat.h>
 
 U8GLIB_PI13264  u8g(LCD_CS, LCD_A0, LCD_RST); // Use HW-SPI
+
+SdFat sd;
+SdFile myFile;
+int sd_test_status = 0;
 
 int SW_A_state = 0;
 int SW_B_state = 0;
@@ -68,6 +74,34 @@ int SW_F_state = 0;
 
 int fadeValue = 255;
 int updown = 1; // is the fading going up or down
+
+int sdTest(){
+//  Serial.begin(9600);
+//  while (!Serial) {}  // wait for Leonardo
+//  Serial.println("Type any character to start");
+//  while (Serial.read() <= 0) {}
+//  delay(400);  // catch Due reset problem
+ // if (sd.begin(SD_CS, SPI_HALF_SPEED)) sd.initErrorHalt();
+  sd.begin(SD_CS, SPI_HALF_SPEED);
+  if (!myFile.open("test.txt", O_RDWR | O_CREAT | O_AT_END)) {
+    //sd.errorHalt("opening test.txt for write failed");
+    return 0;
+  }
+//  Serial.print("Writing to test.txt...");
+  myFile.println("testing 1, 2, 3.");
+  myFile.close();
+//  Serial.println("done.");
+  if (!myFile.open("test.txt", O_READ)) {
+   // sd.errorHalt("opening test.txt for read failed");
+    return 0;
+  }
+//  Serial.println("test.txt:");
+  int data;
+  while ((data = myFile.read()) >= 0) Serial.write(data);
+  // close the file:
+  myFile.close();
+  return 1;
+}
 
 void draw(void) {
   // graphic commands to redraw the complete screen should be placed here  
@@ -92,6 +126,14 @@ void draw(void) {
   } 
   if (SW_D_state == LOW) {     
     u8g.drawStr( 15, 50, "D");
+    if (SW_C_state == LOW){
+      if (sd_test_status == 0){
+        u8g.drawStr( 75, 50, "SD: bad");
+      }
+      if (sd_test_status == 1){
+        u8g.drawStr( 75, 50, "SD: okay");
+      }
+    }
   } 
   if (SW_E_state == LOW) {     
     u8g.drawStr( 20, 50, "E");
@@ -102,7 +144,8 @@ void draw(void) {
 }
 
 void setup(void) {
-  // flip screen, if required
+  sd_test_status = sdTest();
+    // flip screen, if required
   u8g.setRot180();
   u8g.setContrast(LCD_CONTRAST);
   
@@ -152,7 +195,7 @@ void loop(void) {
   
   // fade in from min to max in increments of 5 points:
 
-  while(SW_F_state == false){  
+  while(SW_F_state == false){
     if (fadeValue >=255){
       updown = 0;
     }
@@ -169,6 +212,9 @@ void loop(void) {
       fadeValue -=5;
     }
     SW_F_state = digitalRead(SW_F_pin);
+  }
+  if (SW_D_state == false){
+   sd_test_status = sdTest(); 
   }
 }
 
