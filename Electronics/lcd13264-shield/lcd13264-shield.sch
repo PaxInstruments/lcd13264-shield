@@ -3425,7 +3425,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </part>
 <part name="J1" library="PaxInstrument-T400" deviceset="MICRO-SDCARD-CONNECTOR" device="-3300060P1"/>
 <part name="X1" library="PaxInstrument-T400" deviceset="FH12-12S-1S" device=""/>
-<part name="C21" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="0.1uF">
+<part name="C21" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="100nF">
 <attribute name="MPN" value="CL10B104KO8NNNC"/>
 <attribute name="OC_DIGIKEY" value="1276-1005-2-ND"/>
 </part>
@@ -3459,6 +3459,30 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="Q1" library="SparkFun-DiscreteSemi" deviceset="TRANSISTOR-PNP-DDTB142TC" device="" value="PNP-500mA"/>
 <part name="P+5" library="SparkFun" deviceset="3.3V" device=""/>
 <part name="J2" library="SparkFun-Boards" deviceset="ARDUINO_R3_SHIELD" device="UNO_R3_SHIELD_LOCK"/>
+<part name="C3" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="100nF">
+<attribute name="MPN" value="CL10B104KO8NNNC"/>
+<attribute name="OC_DIGIKEY" value="1276-1005-2-ND"/>
+</part>
+<part name="C4" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="100nF">
+<attribute name="MPN" value="CL10B104KO8NNNC"/>
+<attribute name="OC_DIGIKEY" value="1276-1005-2-ND"/>
+</part>
+<part name="P+6" library="SparkFun" deviceset="3.3V" device=""/>
+<part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
+<part name="GND4" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND5" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="C5" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="100nF">
+<attribute name="MPN" value="CL10B104KO8NNNC"/>
+<attribute name="OC_DIGIKEY" value="1276-1005-2-ND"/>
+</part>
+<part name="C6" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="100nF">
+<attribute name="MPN" value="CL10B104KO8NNNC"/>
+<attribute name="OC_DIGIKEY" value="1276-1005-2-ND"/>
+</part>
+<part name="P+7" library="SparkFun" deviceset="3.3V" device=""/>
+<part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
+<part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3622,6 +3646,34 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="Q1" gate="Q1" x="162.56" y="139.7" rot="MR0"/>
 <instance part="P+5" gate="G$1" x="160.02" y="149.86"/>
 <instance part="J2" gate="G$1" x="40.64" y="223.52"/>
+<instance part="C3" gate="G$1" x="165.1" y="170.18" smashed="yes" rot="R180">
+<attribute name="OC_DIGIKEY" x="165.1" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="VALUE" x="160.401" y="173.736" size="1.778" layer="96" rot="R270"/>
+<attribute name="MPN" x="165.1" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
+<instance part="C4" gate="G$1" x="172.72" y="170.18" smashed="yes" rot="R180">
+<attribute name="OC_DIGIKEY" x="172.72" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="VALUE" x="168.021" y="173.736" size="1.778" layer="96" rot="R270"/>
+<attribute name="MPN" x="172.72" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
+<instance part="P+6" gate="G$1" x="165.1" y="175.26"/>
+<instance part="SUPPLY4" gate="G$1" x="172.72" y="175.26"/>
+<instance part="GND4" gate="1" x="165.1" y="160.02"/>
+<instance part="GND5" gate="1" x="172.72" y="160.02"/>
+<instance part="C5" gate="G$1" x="231.14" y="170.18" smashed="yes" rot="R180">
+<attribute name="OC_DIGIKEY" x="231.14" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="VALUE" x="226.441" y="173.736" size="1.778" layer="96" rot="R270"/>
+<attribute name="MPN" x="231.14" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
+<instance part="C6" gate="G$1" x="238.76" y="170.18" smashed="yes" rot="R180">
+<attribute name="OC_DIGIKEY" x="238.76" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="VALUE" x="234.061" y="173.736" size="1.778" layer="96" rot="R270"/>
+<attribute name="MPN" x="238.76" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
+<instance part="P+7" gate="G$1" x="231.14" y="175.26"/>
+<instance part="SUPPLY5" gate="G$1" x="238.76" y="175.26"/>
+<instance part="GND7" gate="1" x="231.14" y="160.02"/>
+<instance part="GND8" gate="1" x="238.76" y="160.02"/>
 </instances>
 <busses>
 </busses>
@@ -3690,6 +3742,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="Q1" gate="Q1" pin="E"/>
 <wire x1="160.02" y1="144.78" x2="160.02" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="P+5" gate="G$1" pin="3.3V"/>
+</segment>
+<segment>
+<pinref part="P+6" gate="G$1" pin="3.3V"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="165.1" y1="175.26" x2="165.1" y2="172.72" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+7" gate="G$1" pin="3.3V"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="231.14" y1="175.26" x2="231.14" y2="172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -3779,6 +3841,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GND3" gate="1" pin="GND"/>
 <pinref part="U3" gate="G$1" pin="GND"/>
 <wire x1="264.16" y1="132.08" x2="264.16" y2="134.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND4" gate="1" pin="GND"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="162.56" x2="165.1" y2="165.1" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<wire x1="172.72" y1="165.1" x2="172.72" y2="162.56" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND7" gate="1" pin="GND"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="231.14" y1="162.56" x2="231.14" y2="165.1" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C6" gate="G$1" pin="1"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+<wire x1="238.76" y1="165.1" x2="238.76" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="MISO_3V3" class="0">
@@ -4021,6 +4103,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="SUPPLY3" gate="G$1" pin="5V"/>
 <pinref part="U3" gate="G$1" pin="VCCB"/>
 <wire x1="266.7" y1="172.72" x2="266.7" y2="167.64" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY4" gate="G$1" pin="5V"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="172.72" y1="175.26" x2="172.72" y2="172.72" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY5" gate="G$1" pin="5V"/>
+<pinref part="C6" gate="G$1" pin="2"/>
+<wire x1="238.76" y1="175.26" x2="238.76" y2="172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$16" class="0">
