@@ -66,6 +66,9 @@ int SW_D_state = 0;
 int SW_E_state = 0;
 int SW_F_state = 0;
 
+int fadeValue = 255;
+int updown = 1; // is the fading going up or down
+
 void draw(void) {
   // graphic commands to redraw the complete screen should be placed here  
   //u8g.setFont(u8g_font_unifont);
@@ -94,7 +97,7 @@ void draw(void) {
     u8g.drawStr( 20, 50, "E");
   } 
   if (SW_F_state == LOW) {     
-    u8g.drawStr( 25, 50, "F");
+    u8g.drawStr( 25, 50, "Fading...");
   } 
 }
 
@@ -104,7 +107,7 @@ void setup(void) {
   u8g.setContrast(LCD_CONTRAST);
   
   pinMode(LCD_BACKLIGHT_PIN, OUTPUT);           
-  digitalWrite(LCD_BACKLIGHT_PIN, LOW);  
+  analogWrite(LCD_BACKLIGHT_PIN, fadeValue);   
 
   // assign default color value
   if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
@@ -129,6 +132,8 @@ void setup(void) {
     pinMode(SW_F_pin, INPUT);
 }
 
+
+
 void loop(void) {
   SW_A_state = digitalRead(SW_A_pin);
   SW_B_state = digitalRead(SW_B_pin);
@@ -142,8 +147,28 @@ void loop(void) {
   do {
     draw();
   } while( u8g.nextPage() );
-  
   // rebuild the picture after some delay
   delay(50);
+  
+  // fade in from min to max in increments of 5 points:
+
+  while(SW_F_state == false){  
+    if (fadeValue >=255){
+      updown = 0;
+    }
+    if (fadeValue <= 0 ){
+      updown = 1;
+    }
+    
+    analogWrite(LCD_BACKLIGHT_PIN, fadeValue);         
+    delay(10);
+    if (updown == true){
+      fadeValue +=5;
+    }
+    if (updown == false){
+      fadeValue -=5;
+    }
+    SW_F_state = digitalRead(SW_F_pin);
+  }
 }
 
