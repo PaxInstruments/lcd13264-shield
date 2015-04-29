@@ -185,16 +185,20 @@ void loop(void) {
   SW_E_state = digitalRead(SW_E_pin);
   SW_F_state = digitalRead(SW_F_pin);
   
+  // fade in from min to max in increments of 5 points:
+
+  if (SW_D_state == false && SW_C_state == false){
+   sd_test_status = sdTest(); 
+  }
+  
   // picture loop
   u8g.firstPage();  
   do {
     draw();
-  } while( u8g.nextPage() );
+  }
+  while( u8g.nextPage() );
   // rebuild the picture after some delay
   delay(50);
-  
-  // fade in from min to max in increments of 5 points:
-
   while(SW_F_state == false){
     if (fadeValue >=255){
       updown = 0;
@@ -212,9 +216,6 @@ void loop(void) {
       fadeValue -=5;
     }
     SW_F_state = digitalRead(SW_F_pin);
-  }
-  if (SW_D_state == false){
-   sd_test_status = sdTest(); 
   }
 }
 
