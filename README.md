@@ -5,7 +5,7 @@
 [Pax Instruments Template Module](<link to store page>)
 
 ## Overview
-The Pax Instruments LCD12364-shield is a breakout shield for the LCD23164 graphic LCD.
+The Pax Instruments LCD12364-shield is an Arduino shield for the Pax Instruments LCD23164 graphic LCD. You can [purchase this item in our store](http://paxinstruments.com/products/sku1003/).
 
 ## Repository Contents
 - __Datasheets__ - Datasheets for relevant components and parts
