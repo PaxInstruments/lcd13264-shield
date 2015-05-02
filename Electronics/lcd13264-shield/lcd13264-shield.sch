@@ -3518,11 +3518,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="P+1" library="SparkFun" deviceset="3.3V" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="R2" library="PaxInstrument-T400" deviceset="SPARKFUN-RESISTORS_RESISTOR" device="0603-RES" value="3.3R"/>
-<part name="C1" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="1206" value="1uF">
+<part name="C1" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="1uF">
 <attribute name="MPN" value="LMK107B7105KA-T"/>
 <attribute name="OC_DIGIKEY" value="587-1242-2-ND"/>
 </part>
-<part name="C2" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="1206" value="1uF">
+<part name="C2" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="1uF">
 <attribute name="MPN" value="LMK107B7105KA-T"/>
 <attribute name="OC_DIGIKEY" value="587-1242-2-ND"/>
 </part>
