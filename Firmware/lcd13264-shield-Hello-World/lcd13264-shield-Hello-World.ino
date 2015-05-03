@@ -72,7 +72,7 @@ int SW_D_state = 0;
 int SW_E_state = 0;
 int SW_F_state = 0;
 
-int fadeValue = 255;
+int fadeValue = 0;
 int updown = 1; // is the fading going up or down
 
 int sdTest(){
@@ -83,7 +83,7 @@ int sdTest(){
 //  delay(400);  // catch Due reset problem
  // if (sd.begin(SD_CS, SPI_HALF_SPEED)) sd.initErrorHalt();
   sd.begin(SD_CS, SPI_HALF_SPEED);
-  if (!myFile.open("test.txt", O_RDWR | O_CREAT | O_AT_END)) {
+  if (!myFile.open("testFile.txt", O_RDWR | O_CREAT | O_AT_END)) {
     //sd.errorHalt("opening test.txt for write failed");
     return 0;
   }
@@ -208,12 +208,12 @@ void loop(void) {
     }
     
     analogWrite(LCD_BACKLIGHT_PIN, fadeValue);         
-    delay(10);
+    delay(3);
     if (updown == true){
-      fadeValue +=5;
+      fadeValue +=1;
     }
     if (updown == false){
-      fadeValue -=5;
+      fadeValue -=1;
     }
     SW_F_state = digitalRead(SW_F_pin);
   }
