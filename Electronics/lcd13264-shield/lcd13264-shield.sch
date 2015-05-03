@@ -3536,7 +3536,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="P+3" library="SparkFun" deviceset="3.3V" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
-<part name="Q1" library="SparkFun-DiscreteSemi" deviceset="TRANSISTOR-PNP-DDTB142TC" device="" value="PNP-500mA"/>
+<part name="Q1" library="SparkFun-DiscreteSemi" deviceset="TRANSISTOR-PNP-DDTB142TC" device="" value="PNP-500mA">
+<attribute name="MPN" value="MMBT3906"/>
+<attribute name="OC_MOUSER" value="512-MMBT3906"/>
+</part>
 <part name="P+5" library="SparkFun" deviceset="3.3V" device=""/>
 <part name="C3" library="PaxInstrument-T400" deviceset="SPARKFUN-CAPACITORS_CAP" device="0603-CAP" value="100nF">
 <attribute name="MPN" value="CL10B104KO8NNNC"/>
@@ -3750,7 +3753,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="SUPPLY2" gate="G$1" x="205.74" y="172.72"/>
 <instance part="P+3" gate="G$1" x="261.62" y="170.18"/>
 <instance part="SUPPLY3" gate="G$1" x="266.7" y="172.72"/>
-<instance part="Q1" gate="Q1" x="170.18" y="139.7" rot="MR0"/>
+<instance part="Q1" gate="Q1" x="170.18" y="139.7" rot="MR0">
+<attribute name="MPN" x="170.18" y="139.7" size="1.778" layer="96" rot="MR0" display="off"/>
+<attribute name="OC_MOUSER" x="170.18" y="139.7" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
 <instance part="P+5" gate="G$1" x="167.64" y="149.86"/>
 <instance part="C3" gate="G$1" x="172.72" y="170.18" smashed="yes" rot="R180">
 <attribute name="OC_DIGIKEY" x="172.72" y="170.18" size="1.778" layer="96" rot="R180" display="off"/>
