@@ -1729,8 +1729,9 @@ These are the default Design Rules for LumberDAQ.</description>
 </element>
 <element name="Q1" library="SparkFun-DiscreteSemi" package="SOT23-3" value="PNP-500mA" x="62.23" y="21.59">
 <attribute name="PROD_ID" value="TRANS-11479" x="62.23" y="21.59" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="MMBT3906" x="62.23" y="21.59" size="1.778" layer="27" display="off"/>
-<attribute name="OC_MOUSER" value="512-MMBT3906" x="62.23" y="21.59" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="DDTB142TC" x="62.23" y="21.59" size="1.778" layer="27" display="off"/>
+<attribute name="OC_MOUSER" value="621-DDTB142TC-F" x="62.23" y="21.59" size="1.778" layer="27" display="off"/>
+<attribute name="OC_DIGIKEY" value="DDTB142TC" x="62.23" y="21.59" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U$1" library="PaxInstrument-T400" package="PAXINSTRUMENT_LOGO" value="" x="0.762" y="30.48"/>
 <element name="C3" library="PaxInstrument-T400" package="SPARKFUN-CAPACITORS_0603-CAP" value="100nF" x="64.77" y="27.94" rot="R180">
