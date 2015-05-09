@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -1539,9 +1539,6 @@ These are the default Design Rules for LumberDAQ.</description>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="12.5mil"/>
-<param name="AutoGrid" value="1"/>
-<param name="Efforts" value="0"/>
-<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -1723,9 +1720,13 @@ These are the default Design Rules for LumberDAQ.</description>
 </element>
 <element name="U2" library="SparkFun-DigitalIC" package="SO14" value="" x="54.61" y="29.464">
 <attribute name="PROD_ID" value="IC-11329" x="54.61" y="29.464" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="TXB0104DR" x="54.61" y="29.464" size="1.778" layer="27" display="off"/>
+<attribute name="OC_DIGIKEY" value="296-21928-2-ND" x="54.61" y="29.464" size="1.778" layer="27" display="off"/>
 </element>
 <element name="U3" library="SparkFun-DigitalIC" package="SO14" value="" x="44.45" y="29.464">
 <attribute name="PROD_ID" value="IC-11329" x="44.45" y="29.464" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="TXB0104DR" x="44.45" y="29.464" size="1.778" layer="27" display="off"/>
+<attribute name="OC_DIGIKEY" value="296-21928-2-ND" x="44.45" y="29.464" size="1.778" layer="27" display="off"/>
 </element>
 <element name="Q1" library="SparkFun-DiscreteSemi" package="SOT23-3" value="PNP-500mA" x="62.23" y="21.59">
 <attribute name="PROD_ID" value="TRANS-11479" x="62.23" y="21.59" size="1.778" layer="27" display="off"/>

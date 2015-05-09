@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3528,8 +3528,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </part>
 <part name="X2" library="PaxInstrument-T400" deviceset="FH12-12S-1S" device=""/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="M08" device=""/>
-<part name="U2" library="SparkFun-DigitalIC" deviceset="TXB0104PWR" device="SOIC14"/>
-<part name="U3" library="SparkFun-DigitalIC" deviceset="TXB0104PWR" device="SOIC14"/>
+<part name="U2" library="SparkFun-DigitalIC" deviceset="TXB0104PWR" device="SOIC14">
+<attribute name="MPN" value="TXB0104DR"/>
+<attribute name="OC_DIGIKEY" value="296-21928-2-ND"/>
+</part>
+<part name="U3" library="SparkFun-DigitalIC" deviceset="TXB0104PWR" device="SOIC14">
+<attribute name="MPN" value="TXB0104DR"/>
+<attribute name="OC_DIGIKEY" value="296-21928-2-ND"/>
+</part>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="P+2" library="SparkFun" deviceset="3.3V" device=""/>
@@ -3746,8 +3752,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="X2" gate="-11" x="101.6" y="165.1" rot="R180"/>
 <instance part="X2" gate="-12" x="101.6" y="167.64" rot="R180"/>
 <instance part="JP1" gate="G$1" x="132.08" y="157.48" rot="R180"/>
-<instance part="U2" gate="G$1" x="203.2" y="149.86"/>
-<instance part="U3" gate="G$1" x="264.16" y="149.86"/>
+<instance part="U2" gate="G$1" x="203.2" y="149.86">
+<attribute name="MPN" x="203.2" y="149.86" size="1.778" layer="96" display="off"/>
+<attribute name="OC_DIGIKEY" x="203.2" y="149.86" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="U3" gate="G$1" x="264.16" y="149.86">
+<attribute name="MPN" x="264.16" y="149.86" size="1.778" layer="96" display="off"/>
+<attribute name="OC_DIGIKEY" x="264.16" y="149.86" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND2" gate="1" x="203.2" y="129.54"/>
 <instance part="GND3" gate="1" x="264.16" y="129.54"/>
 <instance part="P+2" gate="G$1" x="200.66" y="170.18"/>
