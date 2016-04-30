@@ -39,27 +39,33 @@
 */
 
 // This documen is modified to work with the Pax Instruments LCD Test Board v0.2
-#define LCD_A0               A5
-#define LCD_BACKLIGHT_PIN    A2
-#define LCD_CS               A3
-#define LCD_RST              A4
+#define LCD_A0               9
+#define LCD_BACKLIGHT_PIN    6    // LCD backlight on pin
+#define LCD_CS               7
+#define LCD_RST              8
 // MISO                     14
 // SCK                      15
 // MOSI                     16
 #define SW_A_pin             4
-#define SW_B_pin             12
-#define SW_C_pin             6
-#define SW_D_pin             0
-#define SW_E_pin             1
-#define SW_F_pin             7
-#define SD_CS                8
+#define SW_B_pin             5
+#define SW_C_pin             A3
+#define SW_D_pin             A2
+#define SW_E_pin             A1
+#define SW_F_pin             A0
+#define SD_CS                10
 
 #define LCD_CONTRAST     0x018*7  // Sets the LCD contrast
 
+#define DHTPIN A4     // what pin we're connected to
+#define DHTTYPE DHT11   // DHT 11 
+
 #include "U8glib.h"
 #include <SdFat.h>
+#include "DHT.h"
 
 U8GLIB_PI13264  u8g(LCD_CS, LCD_A0, LCD_RST); // Use HW-SPI
+
+DHT dht(DHTPIN, DHTTYPE);
 
 SdFat sd;
 SdFile myFile;
@@ -113,6 +119,15 @@ void draw(void) {
   u8g.setFont(u8g_font_5x8);
   u8g.drawStr( 0, 39, "OPENSOURCE LAB INSTRUMENTS");
   u8g.drawStr( 0, 62, "Graphic LCD 132x64 shield");
+  u8g.drawStr( 40, 8, "    Temp: ");
+  u8g.setPrintPos(90, 8);
+  u8g.print(dht.readTemperature(), 0);
+  u8g.drawStr( 100, 8, " C");
+  u8g.drawStr( 40, 16, "Humidity: ");
+  u8g.setPrintPos(90, 16);
+  u8g.print(dht.readHumidity(), 0);
+  u8g.drawStr( 100, 16, " %");
+  
   
   // Draw button stuff
   if (SW_A_state == LOW) {     
@@ -150,10 +165,7 @@ void setup(void) {
   u8g.setContrast(LCD_CONTRAST);
   
   pinMode(LCD_BACKLIGHT_PIN, OUTPUT);           
-  analogWrite(LCD_BACKLIGHT_PIN, fadeValue); 
-
-  pinMode(11, OUTPUT);           
-  digitalWrite(11, HIGH);   
+  analogWrite(LCD_BACKLIGHT_PIN, fadeValue);   
 
   // assign default color value
   if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
@@ -176,6 +188,8 @@ void setup(void) {
     pinMode(SW_D_pin, INPUT);
     pinMode(SW_E_pin, INPUT);
     pinMode(SW_F_pin, INPUT);
+    
+    dht.begin();
 }
 
 
